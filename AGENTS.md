@@ -70,6 +70,20 @@ Regras de arquitetura:
 
 ## Padrão de interface, motion e feedback
 
+### Stack de skills de design
+
+O ambiente local deste projeto foi preparado com skills de design para apoiar a futura landing page. Antes de decisões visuais relevantes, considerar as skills aplicáveis quando estiverem disponíveis:
+
+- `design-motion-principles`: motion, microinterações, entrada/saída, feedback e acessibilidade de animações.
+- `ui-ux-pro-max`: direção visual, heurísticas de UI/UX, estilos, layouts e polimento de interface.
+- `web-design-guidelines`: critérios de design web, composição, responsividade e qualidade visual.
+- `brand`: identidade, voz visual, consistência de marca e aplicação de paleta/tipografia.
+- `extract-design-system`: extração de tokens, padrões e componentes a partir de referências visuais ou código existente.
+- `image-to-code`: implementação fiel de telas a partir de referência visual escolhida.
+- Hot Designer bundle: usar skills complementares como `interface-design`, `interaction-design`, `design-system`, `design-taste-frontend`, `ui-styling`, `shadcn`, `impeccable` e `verification-before-completion` quando elas forem relevantes ao escopo.
+
+Se uma skill não estiver disponível em outro ambiente, o agente deve seguir o mesmo princípio de trabalho com a melhor alternativa disponível e registrar a limitação no PR.
+
 Antes de implementar qualquer interface, o agente deve trabalhar como designer de produto sênior e fazer um preflight de design com três camadas:
 
 1. Referência visual:
