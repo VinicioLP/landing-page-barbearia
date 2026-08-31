@@ -70,6 +70,28 @@ Regras de arquitetura:
 
 ## Padrão de interface, motion e feedback
 
+Antes de implementar qualquer interface, o agente deve trabalhar como designer de produto sênior e fazer um preflight de design com três camadas:
+
+1. Referência visual:
+   - Analisar a referência anexada, descrita, gerada ou escolhida para a tela.
+   - Extrair layout, hierarquia, espaçamento, densidade, paleta, tipografia e padrões de componentes.
+   - Quando não houver referência visual, não iniciar a implementação da interface; primeiro propor ou solicitar uma direção visual clara.
+2. Critério de UI/UX:
+   - Revisar contraste, grid, responsividade, acessibilidade, estados vazios, loading, erro e microcopy.
+   - Apontar riscos antes de codar, incluindo riscos de legibilidade, excesso visual, baixa conversão, acessibilidade, performance, motion excessivo e manutenção.
+   - Definir como a tela será validada em desktop, mobile e estados relevantes.
+3. Componentes:
+   - Procurar componentes existentes do projeto antes de criar novos.
+   - Reutilizar, compor ou evoluir componentes existentes sempre que isso preservar consistência e reduzir manutenção.
+   - Quando fizer sentido para a stack, usar padrões de shadcn/ui, 21st.dev, Magic UI ou Aceternity como inspiração ou base, sem copiar componentes decorativos sem função.
+   - Não inventar componentes ornamentais que não ajudem navegação, compreensão, conversão, feedback ou confiança.
+
+Depois de implementar uma tela, o agente deve reportar:
+
+- O que foi inspirado na referência visual.
+- Quais componentes existentes, padrões ou bibliotecas foram usados.
+- Quais decisões melhoram a qualidade visual, a usabilidade e a consistência do produto.
+
 Toda interface criada ou alterada neste projeto deve seguir os princípios da skill `design-motion-principles`, com o contexto de landing page profissional:
 
 - Priorizar a lente de Jakub Krehel para polimento sutil de produção.

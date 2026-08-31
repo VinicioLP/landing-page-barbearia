@@ -12,6 +12,36 @@ Closes #
 
 -
 
+## Preflight de design
+
+Referência visual analisada:
+
+-
+
+Layout, hierarquia, espaçamento, densidade, paleta, tipografia e padrões extraídos:
+
+-
+
+Riscos de UI/UX apontados antes de codar:
+
+-
+
+Componentes existentes reutilizados ou evoluídos:
+
+-
+
+Padrões externos usados quando fizeram sentido:
+
+- [ ] shadcn/ui
+- [ ] 21st.dev
+- [ ] Magic UI
+- [ ] Aceternity
+- [ ] Não se aplica
+
+Decisões que melhoram a qualidade visual:
+
+-
+
 ## Como foi validado
 
 - [ ] Lint/formatação
