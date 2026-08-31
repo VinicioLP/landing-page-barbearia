@@ -25,6 +25,8 @@ Todo Pull Request deve conter:
 - Limitações.
 - Próximos passos.
 
+Nenhum código deve entrar na branch `main` sem passar pela esteira de qualidade aplicável ao escopo da mudança.
+
 ## Regras operacionais
 
 - Não implementar tarefas sem Issue relacionada, exceto preparações locais indispensáveis para viabilizar o próprio fluxo.
@@ -32,6 +34,39 @@ Todo Pull Request deve conter:
 - Evitar misturar `Correção`, `Melhoria` e `Nova função` no mesmo PR quando puderem ser entregues separadamente.
 - Manter a descrição do PR clara o suficiente para orientar revisão, deploy e continuidade por outro agente.
 - Atualizar este arquivo sempre que o processo de trabalho do projeto mudar.
+
+## Esteira de qualidade
+
+Toda mudança deve declarar no PR quais gates foram executados, quais não se aplicam e por quê. A profundidade da esteira deve acompanhar o risco da entrega: não criar burocracia sem valor, mas não permitir entrada em `main` sem validação objetiva.
+
+Gates mínimos antes de merge em `main`:
+
+- Issue vinculada e classificada como `Correção`, `Melhoria` ou `Nova função`.
+- Branch dedicada e Pull Request aberto.
+- Lint, formatação e checagens estáticas aplicáveis passando.
+- Testes aplicáveis passando ou justificativa explícita quando ainda não existirem.
+- Revisão visual em desktop e mobile para qualquer mudança de interface.
+- Revisão de acessibilidade quando houver UI, formulário, navegação, modal, mídia ou conteúdo interativo.
+- Revisão de segurança para formulários, integrações externas, dados do usuário, scripts de terceiros e deploy.
+- Performance budget verificado para páginas públicas, assets e interações críticas.
+- Riscos, limitações e próximos passos registrados no PR.
+
+Ferramentas a considerar quando fizerem sentido para a stack:
+
+- Observabilidade: Sentry para erros de frontend; OpenTelemetry para instrumentação padronizada quando houver backend, APIs ou tracing distribuído; Datadog ou New Relic apenas quando houver necessidade real de APM, infraestrutura, logs centralizados ou operação contínua.
+- Qualidade e lint: Biome para lint e formatação em projetos JS/TS; Commitlint quando houver padronização de commits; Knip quando houver dependências, exports ou arquivos mortos a controlar; arch-contract quando houver fronteiras arquiteturais reais; Stryker quando houver lógica crítica suficiente para justificar testes de mutação.
+- Testes: unitários para lógica e componentes isolados; integração para fluxos entre módulos, APIs ou formulários; end-to-end com Playwright para jornadas principais; Codecov quando houver cobertura a acompanhar em CI; Endtest apenas se fizer sentido para fluxos monitorados em nuvem ou testes sem manutenção local pesada.
+- Segurança e operação: rate limit em endpoints, formulários, webhooks e qualquer ação suscetível a abuso; revisão de segurança antes de expor integrações; separação clara entre frontend e backend quando houver backend; termos de uso e política de privacidade revisados e aprovados pelo jurídico antes de coletar dados pessoais, publicar formulários sensíveis, usar analytics não essencial ou lançar campanhas.
+
+Regras de arquitetura:
+
+- Evitar overengineering e dependências que não resolvem um problema atual.
+- Evitar bottlenecks absurdos em renderização, carregamento, rede, build e deploy.
+- Componentizar desde o início, mantendo componentes pequenos, nomeados pelo domínio e fáceis de substituir.
+- Aplicar DRY com critério, sem criar abstrações prematuras para duplicações pequenas ou ainda instáveis.
+- Antes de criar um componente, procurar componentes existentes e reutilizar ou evoluir o que já existe.
+- Separar responsabilidades de apresentação, estado, integração externa e regras de negócio quando essas camadas existirem.
+- Documentar decisões arquiteturais relevantes no PR quando houver trade-off real.
 
 ## Padrão de interface, motion e feedback
 
