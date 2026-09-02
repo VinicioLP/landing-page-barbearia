@@ -1,5 +1,13 @@
 const liveRegion = document.querySelector(".live-region");
+const header = document.querySelector(".site-header");
 document.documentElement.classList.add("js");
+
+const syncHeader = () => {
+  header?.classList.toggle("is-scrolled", window.scrollY > 24);
+};
+
+syncHeader();
+window.addEventListener("scroll", syncHeader, { passive: true });
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
@@ -11,8 +19,8 @@ const revealObserver = new IntersectionObserver(
     }
   },
   {
-    rootMargin: "0px 0px -12% 0px",
-    threshold: 0.18,
+    rootMargin: "0px 0px -6% 0px",
+    threshold: 0.08,
   },
 );
 

@@ -22,30 +22,62 @@ test("renders the landing page with required sections and WhatsApp CTA", async (
   await expect(page.locator("form")).toHaveCount(0);
 });
 
-test("keeps navigation and scroll-driven motion available", async ({
+test("opens with a full-screen photographic cover and reveals content on scroll", async ({
   page,
 }) => {
   await page.goto("/");
+
+  const viewport = page.viewportSize();
+  expect(viewport).not.toBeNull();
+
+  const coverBox = await page.locator(".cover-hero").boundingBox();
+  expect(coverBox?.height).toBeGreaterThanOrEqual(
+    (viewport?.height ?? 0) * 0.95,
+  );
+
+  await expect(page.locator(".cover-hero__image")).toHaveAttribute(
+    "fetchpriority",
+    "high",
+  );
+
+  const titleTop = await page.locator("#hero-title").evaluate((element) => {
+    return element.getBoundingClientRect().top;
+  });
+  expect(titleTop).toBeGreaterThan((viewport?.height ?? 0) * 0.84);
+
+  const servicesTop = await page.locator("#servicos").evaluate((element) => {
+    return element.getBoundingClientRect().top;
+  });
+  expect(servicesTop).toBeGreaterThan((viewport?.height ?? 0) * 1.2);
+
+  const animationTimeline = await page
+    .locator(".cover-hero__image")
+    .evaluate((element) => {
+      return window.getComputedStyle(element).animationTimeline;
+    });
+
+  expect(animationTimeline).toContain("scroll");
+
+  await page.evaluate(() => window.scrollTo(0, window.innerHeight));
+  await expect(page.locator("#hero-title")).toBeInViewport();
 
   await page
     .getByRole("navigation", { name: "Navegação principal" })
     .getByRole("link", { name: "Localização", exact: true })
     .click();
   await expect(page.locator("#localizacao")).toBeInViewport();
-
-  const animationTimeline = await page
-    .locator(".scroll-rail__fill")
-    .evaluate((element) => {
-      return window.getComputedStyle(element).animationTimeline;
-    });
-
-  expect(animationTimeline).toContain("scroll");
 });
 
 test("supports reduced motion preferences", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
 
-  await expect(page.locator(".scroll-rail")).toBeHidden();
+  const transform = await page
+    .locator(".cover-hero__image")
+    .evaluate((element) => {
+      return window.getComputedStyle(element).transform;
+    });
+
+  expect(["none", "matrix(1, 0, 0, 1, 0, 0)"]).toContain(transform);
   await expect(page.locator(".reveal").first()).toHaveCSS("opacity", "1");
 });
