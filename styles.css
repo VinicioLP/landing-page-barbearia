@@ -626,8 +626,8 @@ address {
 
 .booking-band__inner {
   display: grid;
-  grid-template-columns: minmax(220px, 0.34fr) minmax(0, 0.66fr);
-  gap: 36px;
+  grid-template-columns: minmax(260px, 0.32fr) minmax(0, 0.68fr);
+  gap: 76px;
   align-items: end;
   padding-block: 84px;
 }
@@ -635,22 +635,13 @@ address {
 .booking-band__aside {
   display: grid;
   max-width: 360px;
-  gap: 28px;
+  gap: 34px;
 }
 
 .booking-band .eyebrow,
 .booking-band p,
 .booking-band h2 {
   color: var(--black);
-}
-
-.booking-band__aside p:not(.eyebrow) {
-  max-width: 30ch;
-  margin: 0;
-  font-family: var(--font-utility);
-  font-size: 0.96rem;
-  font-weight: 750;
-  line-height: 1.45;
 }
 
 .booking-band h2 {
@@ -664,28 +655,42 @@ address {
 
 .booking-steps {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
   padding: 0;
   margin: 0;
-  border-top: 1px solid rgb(0 0 0 / 0.2);
   list-style: none;
 }
 
 .booking-steps li {
-  min-height: 76px;
-  padding: 18px 18px 0 0;
-  border-right: 1px solid rgb(0 0 0 / 0.2);
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  min-height: 72px;
+  padding: 0 0 20px;
+  border-bottom: 1px solid rgb(0 0 0 / 0.22);
   color: var(--black);
   font-family: var(--font-utility);
-  font-size: 0.88rem;
-  font-weight: 850;
   line-height: 1.25;
   text-transform: uppercase;
 }
 
 .booking-steps li:last-child {
-  border-right: 0;
+  min-height: auto;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.booking-steps span {
+  color: rgb(0 0 0 / 0.5);
+  font-size: 0.86rem;
+  font-weight: 900;
+}
+
+.booking-steps strong {
+  color: var(--black);
+  font-size: 0.95rem;
+  font-weight: 900;
 }
 
 .booking-band .button--gold {
@@ -971,14 +976,9 @@ address {
     width: 100%;
   }
 
-  .booking-steps {
-    grid-template-columns: 1fr;
-  }
-
   .booking-steps li {
     min-height: auto;
     padding: 14px 0;
-    border-right: 0;
     border-bottom: 1px solid rgb(0 0 0 / 0.2);
   }
 

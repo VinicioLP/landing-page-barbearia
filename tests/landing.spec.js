@@ -17,8 +17,9 @@ test("renders the landing page with required sections, logo and WhatsApp CTA", a
   await expect(
     page.getByRole("heading", { name: "Rua dos Andradas, 240." }),
   ).toBeVisible();
-  await expect(page.getByText("Agenda sem formulário")).toBeVisible();
-  await expect(page.getByText("Sem cadastro, sem campos")).toBeVisible();
+  await expect(page.getByText("01")).toBeVisible();
+  await expect(page.getByText("Envie uma mensagem")).toBeVisible();
+  await expect(page.getByText("03")).toBeVisible();
 
   const whatsappLinks = page.locator('a[href^="https://wa.me/"]');
   await expect(whatsappLinks).toHaveCount(3);
