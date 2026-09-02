@@ -59,13 +59,14 @@ for (const link of document.querySelectorAll(".whatsapp-link")) {
       return;
     }
 
+    const labelTarget = link.querySelector("span") ?? link;
     link.classList.add("is-routing");
-    link.textContent = loadingLabel;
+    labelTarget.textContent = loadingLabel;
     liveRegion.textContent = "Abrindo conversa no WhatsApp.";
 
     window.setTimeout(() => {
       link.classList.remove("is-routing");
-      link.textContent = defaultLabel;
+      labelTarget.textContent = defaultLabel;
     }, 1400);
   });
 }

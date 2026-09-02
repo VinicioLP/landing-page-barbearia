@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#111111" />
+    <meta name="theme-color" content="#050505" />
     <meta
       name="description"
       content="Barbearia Corte Nobre, cortes masculinos, barba e acabamento premium com atendimento direto pelo WhatsApp."
@@ -22,73 +22,82 @@
     <a class="skip-link" href="#apresentacao">Pular para o conteúdo</a>
 
     <header class="site-header">
-      <a class="brand" href="#inicio" translate="no" aria-label="Barbearia Corte Nobre">
-        <span class="brand__mark" aria-hidden="true">CN</span>
-        <span class="brand__text">Corte Nobre</span>
+      <a class="brand" href="#inicio" aria-label="Barbearia Corte Nobre">
+        <img
+          class="brand__logo brand__logo--light"
+          src="/assets/corte-nobre-logo-light.svg"
+          alt="Barbearia Corte Nobre"
+          width="316"
+          height="80"
+        />
       </a>
       <nav class="nav" aria-label="Navegação principal">
         <a href="#servicos">Serviços</a>
-        <a href="#experiencia">Experiência</a>
+        <a href="#experiencia">Studio</a>
         <a href="#localizacao">Localização</a>
       </nav>
       <a
-        class="button button--compact whatsapp-link"
+        class="button button--gold button--compact whatsapp-link"
         href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Corte%20Nobre."
         target="_blank"
         rel="noopener noreferrer"
-        data-default-label="WhatsApp"
-        data-loading-label="Abrindo…"
+        data-default-label="Agendar"
+        data-loading-label="Abrindo"
       >
-        WhatsApp
+        <span>Agendar</span>
+        <span class="button__icon" aria-hidden="true">↗</span>
       </a>
     </header>
 
     <main id="conteudo">
-      <section class="cover-hero" id="inicio" aria-labelledby="hero-title">
+      <section class="cover-hero" id="inicio" aria-label="Foto de abertura da barbearia">
         <div class="cover-hero__media media-shell">
           <img
             class="cover-hero__image"
             src="/assets/barber-beard.jpg"
-            alt="Cliente recebendo acabamento de barba em uma barbearia moderna"
+            alt="Cliente recebendo acabamento de barba em uma barbearia premium"
             width="1600"
             height="1067"
             fetchpriority="high"
           />
         </div>
-
         <div class="cover-hero__scrim" aria-hidden="true"></div>
-
         <div class="cover-hero__cue" aria-hidden="true">
-          <span></span>
+          <span>Scroll</span>
         </div>
       </section>
 
       <div class="content-stage" id="apresentacao">
         <section class="hero-intro section-shell reveal" aria-labelledby="hero-title">
-          <div class="hero-intro__copy">
-            <p class="eyebrow">Barbearia premium em São Paulo</p>
-            <h1 id="hero-title">Corte, barba e presença para quem cuida dos detalhes.</h1>
-            <p class="hero__copy">
-              Atendimento direto, ambiente confortável e acabamento preciso para sair pronto
-              para qualquer ocasião.
-            </p>
-            <div class="hero__actions">
-              <a
-                class="button whatsapp-link"
-                href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Corte%20Nobre."
-                target="_blank"
-                rel="noopener noreferrer"
-                data-default-label="Agendar pelo WhatsApp"
-                data-loading-label="Abrindo WhatsApp…"
-              >
-                Agendar pelo WhatsApp
-              </a>
-              <a class="button button--secondary" href="#localizacao">Ver localização</a>
+          <div class="hero-intro__kicker">
+            <span>Barbearia premium em São Paulo</span>
+            <span>Atendimento por horário</span>
+          </div>
+          <div class="hero-intro__main">
+            <h1 id="hero-title">Corte masculino, barba clássica e acabamento de presença.</h1>
+            <div class="hero-intro__side">
+              <p>
+                Uma experiência direta: conversa rápida, técnica precisa, bancada limpa e saída
+                conferida no espelho.
+              </p>
+              <div class="hero__actions">
+                <a
+                  class="button button--gold whatsapp-link"
+                  href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Corte%20Nobre."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-default-label="Agendar pelo WhatsApp"
+                  data-loading-label="Abrindo WhatsApp"
+                >
+                  <span>Agendar pelo WhatsApp</span>
+                  <span class="button__icon" aria-hidden="true">↗</span>
+                </a>
+                <a class="button button--dark" href="tel:+5511999999999">
+                  <span>(11) 99999-9999</span>
+                </a>
+              </div>
             </div>
           </div>
-          <p class="studio-note">
-            Bancada limpa, conversa objetiva e acabamento conferido no espelho antes de você sair.
-          </p>
           <dl class="hero__stats" aria-label="Destaques da barbearia">
             <div>
               <dt>12 anos</dt>
@@ -105,54 +114,49 @@
           </dl>
         </section>
 
-        <section class="section-shell section-intro reveal" id="servicos" aria-labelledby="servicos-title">
-          <div class="section-intro__copy">
-            <p class="eyebrow">Serviços essenciais</p>
-            <h2 id="servicos-title">O básico bem feito, com acabamento de barbearia séria.</h2>
-            <p>
-              Sem formulário e sem fricção. Escolha o serviço, chame no WhatsApp e combine o
-              melhor horário.
-            </p>
+        <section class="section-shell service-menu" id="servicos" aria-labelledby="servicos-title">
+          <div class="service-menu__heading reveal">
+            <p class="eyebrow">Serviços</p>
+            <h2 id="servicos-title">O essencial, executado como ritual.</h2>
           </div>
+          <ul class="service-menu__list" aria-label="Lista de serviços">
+            <li class="service-row reveal">
+              <span>Cabelo</span>
+              <h3>Corte masculino</h3>
+              <p>Máquina, tesoura, finalização e orientação simples para manter o desenho.</p>
+              <strong>A partir de R$ 55</strong>
+            </li>
+            <li class="service-row reveal" data-delay="80">
+              <span>Barba</span>
+              <h3>Barba completa</h3>
+              <p>Toalha quente, navalha, desenho e hidratação para acabamento limpo.</p>
+              <strong>A partir de R$ 45</strong>
+            </li>
+            <li class="service-row reveal" data-delay="160">
+              <span>Combo</span>
+              <h3>Corte e barba</h3>
+              <p>A visita completa para renovar o visual sem passar por formulário ou fila.</p>
+              <strong>A partir de R$ 90</strong>
+            </li>
+          </ul>
         </section>
 
-        <section class="services section-shell" aria-label="Lista de serviços">
-          <article class="service-card reveal">
-            <span class="service-card__tag">Cabelo</span>
-            <h3>Corte masculino</h3>
-            <p>Consultoria rápida, máquina, tesoura e finalização alinhada ao seu estilo.</p>
-            <strong>A partir de R$ 55</strong>
-          </article>
-          <article class="service-card reveal" data-delay="80">
-            <span class="service-card__tag">Barba</span>
-            <h3>Barba completa</h3>
-            <p>Toalha quente, desenho com navalha e hidratação para acabamento limpo.</p>
-            <strong>A partir de R$ 45</strong>
-          </article>
-          <article class="service-card reveal" data-delay="160">
-            <span class="service-card__tag">Combo</span>
-            <h3>Corte e barba</h3>
-            <p>Experiência completa para renovar o visual em uma única visita.</p>
-            <strong>A partir de R$ 90</strong>
-          </article>
-        </section>
-
-        <section class="experience section-shell" id="experiencia" aria-labelledby="experiencia-title">
-          <div class="media-shell reveal">
+        <section class="studio section-shell" id="experiencia" aria-labelledby="experiencia-title">
+          <div class="studio__media media-shell reveal">
             <img
               src="/assets/barber-cut.jpg"
-              alt="Barbeiro aparando o cabelo de um cliente com atenção ao acabamento"
+              alt="Barbeiro aparando cabelo com atenção ao acabamento"
               width="1200"
               height="1798"
               loading="lazy"
             />
           </div>
-          <div class="experience__content reveal" data-delay="120">
-            <p class="eyebrow">Experiência</p>
-            <h2 id="experiencia-title">Ritual direto, ambiente calmo e resultado consistente.</h2>
+          <div class="studio__content reveal" data-delay="120">
+            <p class="eyebrow">Studio</p>
+            <h2 id="experiencia-title">Clássico no método. Atual no atendimento.</h2>
             <p>
-              A Corte Nobre combina técnica clássica com um atendimento simples: você chega,
-              conversa sobre o corte, acompanha o acabamento e sai com tudo alinhado.
+              A Corte Nobre combina o peso visual de uma barbearia tradicional com uma rotina
+              objetiva: horário combinado, ambiente calmo e acabamento revisado antes da saída.
             </p>
             <ul class="check-list">
               <li>Atendimento por horário para evitar espera desnecessária.</li>
@@ -162,36 +166,46 @@
           </div>
         </section>
 
-        <section class="process section-shell" aria-labelledby="process-title">
-          <div class="process__heading reveal">
-            <p class="eyebrow">Precisão em cada etapa</p>
-            <h2 id="process-title">Do primeiro ajuste ao acabamento final, tudo segue uma linha clara.</h2>
-          </div>
-          <div class="process__steps">
-            <article class="process-step reveal">
-              <span>01</span>
-              <h3>Escuta</h3>
-              <p>Uma conversa rápida alinha estilo, rotina e manutenção antes da primeira tesourada.</p>
-            </article>
-            <article class="process-step reveal" data-delay="80">
-              <span>02</span>
-              <h3>Técnica</h3>
-              <p>Máquina, tesoura, navalha e acabamento trabalham juntos para manter o desenho limpo.</p>
-            </article>
-            <article class="process-step reveal" data-delay="160">
-              <span>03</span>
-              <h3>Revisão</h3>
-              <p>O espelho fecha o atendimento com ajustes finos para você sair seguro do resultado.</p>
-            </article>
+        <section class="booking-band reveal" aria-labelledby="booking-title">
+          <div class="section-shell booking-band__inner">
+            <div class="booking-band__aside">
+              <ol class="booking-steps" aria-label="Como funciona o agendamento">
+                <li>
+                  <span>01</span>
+                  <strong>Envie uma mensagem</strong>
+                </li>
+                <li>
+                  <span>02</span>
+                  <strong>Escolha o melhor horário</strong>
+                </li>
+                <li>
+                  <span>03</span>
+                  <strong>Chegue direto para o atendimento</strong>
+                </li>
+              </ol>
+              <a
+                class="button button--gold whatsapp-link"
+                href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Corte%20Nobre."
+                target="_blank"
+                rel="noopener noreferrer"
+                data-default-label="Chamar no WhatsApp"
+                data-loading-label="Abrindo WhatsApp"
+              >
+                <span>Chamar no WhatsApp</span>
+                <span class="button__icon" aria-hidden="true">↗</span>
+              </a>
+            </div>
+            <div class="booking-band__message">
+              <h2 id="booking-title">Chame no WhatsApp, combine o horário e venha direto para a cadeira.</h2>
+            </div>
           </div>
         </section>
 
         <section class="contact section-shell" id="localizacao" aria-labelledby="localizacao-title">
           <div class="contact__details reveal">
             <p class="eyebrow">Contato e localização</p>
-            <h2 id="localizacao-title">Fale direto com a barbearia.</h2>
+            <h2 id="localizacao-title">Rua dos Andradas, 240.</h2>
             <address>
-              Rua dos Andradas, 240<br />
               Centro, São Paulo - SP<br />
               Segunda a sábado, das 9h às 20h
             </address>
@@ -199,41 +213,38 @@
               Telefone:
               <a href="tel:+5511999999999">(11) 99999-9999</a>
             </p>
-            <div class="contact__actions">
-              <a
-                class="button whatsapp-link"
-                href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Corte%20Nobre."
-                target="_blank"
-                rel="noopener noreferrer"
-                data-default-label="Chamar no WhatsApp"
-                data-loading-label="Abrindo WhatsApp…"
-              >
-                Chamar no WhatsApp
-              </a>
-              <a
-                class="button button--secondary"
-                href="https://www.google.com/maps/search/?api=1&query=Rua%20dos%20Andradas%20240%20Centro%20S%C3%A3o%20Paulo%20SP"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Abrir no mapa
-              </a>
-            </div>
           </div>
           <div class="location-card reveal" data-delay="120">
             <div class="location-card__map" aria-hidden="true">
               <span>Centro</span>
             </div>
             <h3>Perto de você, fácil de encontrar.</h3>
-            <p>
-              Região central, acesso simples por transporte público e vagas rotativas no entorno.
-            </p>
+            <p>Região central, acesso simples por transporte público e vagas rotativas no entorno.</p>
+            <a
+              class="button button--dark"
+              href="https://www.google.com/maps/search/?api=1&query=Rua%20dos%20Andradas%20240%20Centro%20S%C3%A3o%20Paulo%20SP"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Abrir no mapa</span>
+              <span class="button__icon" aria-hidden="true">↗</span>
+            </a>
           </div>
         </section>
       </div>
     </main>
 
     <footer class="footer section-shell">
+      <a class="brand brand--footer" href="#inicio" aria-label="Barbearia Corte Nobre">
+        <img
+          class="brand__logo"
+          src="/assets/corte-nobre-logo-dark.svg"
+          alt="Barbearia Corte Nobre"
+          width="316"
+          height="80"
+          loading="lazy"
+        />
+      </a>
       <p>© 2026 Barbearia Corte Nobre. Todos os direitos reservados.</p>
       <a href="tel:+5511999999999">(11) 99999-9999</a>
     </footer>

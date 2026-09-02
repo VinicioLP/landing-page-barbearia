@@ -1,19 +1,25 @@
 import { expect, test } from "@playwright/test";
 
-test("renders the landing page with required sections and WhatsApp CTA", async ({
+test("renders the landing page with required sections, logo and WhatsApp CTA", async ({
   page,
 }) => {
   await page.goto("/");
 
+  await expect(
+    page.getByRole("img", { name: "Barbearia Corte Nobre" }),
+  ).toHaveCount(2);
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
-    "Corte, barba e presença",
+    "Corte masculino, barba clássica",
   );
   await expect(
-    page.getByRole("heading", { name: "O básico bem feito" }),
+    page.getByRole("heading", { name: "O essencial, executado como ritual." }),
   ).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "Fale direto com a barbearia." }),
+    page.getByRole("heading", { name: "Rua dos Andradas, 240." }),
   ).toBeVisible();
+  await expect(page.getByText("01")).toBeVisible();
+  await expect(page.getByText("Envie uma mensagem")).toBeVisible();
+  await expect(page.getByText("03")).toBeVisible();
 
   const whatsappLinks = page.locator('a[href^="https://wa.me/"]');
   await expect(whatsappLinks).toHaveCount(3);
