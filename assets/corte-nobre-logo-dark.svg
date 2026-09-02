@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="316" height="80" viewBox="0 0 316 80" role="img" aria-labelledby="title desc">
+  <title id="title">Barbearia Corte Nobre</title>
+  <desc id="desc">Logo da Barbearia Corte Nobre com monograma CN e detalhe dourado.</desc>
+  <g fill="none" fill-rule="evenodd">
+    <path d="M8 12h54v56H8z" stroke="#A97932" stroke-width="2"/>
+    <path d="M18 25h34M18 55h34" stroke="#A97932" stroke-width="2" stroke-linecap="square"/>
+    <text x="35" y="47" fill="#050505" font-family="Bahnschrift Condensed, Arial Narrow, Impact, sans-serif" font-size="28" font-weight="700" text-anchor="middle">CN</text>
+    <path d="M72 20h218" stroke="#A97932" stroke-width="1"/>
+    <text x="72" y="48" fill="#050505" font-family="Bahnschrift Condensed, Arial Narrow, Impact, sans-serif" font-size="36" font-weight="700" letter-spacing="0">CORTE NOBRE</text>
+    <text x="288" y="64" fill="#A97932" font-family="Georgia, serif" font-size="12" font-style="italic" font-weight="700" text-anchor="end">Barbearia - Est. 2026</text>
+  </g>
+</svg>
